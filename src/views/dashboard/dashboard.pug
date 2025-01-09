@@ -1,0 +1,64 @@
+extends ../layout
+
+block content
+  head
+    title #{title}
+    link(rel="stylesheet" href="/css/dashboard.css")
+  body
+    .container.mt-4
+      h1.text-center #{title}
+      
+      .card.mx-3.p-4.shadow-lg
+        a(href="/servicio/create")
+          button.btn.btn-primary.btn-lg.w-100(type="button") Agregar Servicios
+        .card.mx-3.p-4.shadow-lg(style="width: 5rem;")
+        a(href="/turno/create")
+          button.btn.btn-secondary.btn-lg.w-100(type="button") Nueva Cita
+
+      h2.mt-4 Servicios Disponibles
+
+      table.table.table-bordered.table-striped
+        thead
+          tr
+            th Nombre
+            th Descripción
+            th Precio (€)
+            th Duración (min)
+            th Acciones
+        tbody
+          each servicio in servicios
+            tr
+              td #{servicio.nombre}
+              td #{servicio.descripcion}
+              td #{servicio.precio}
+              td #{servicio.duracion}
+              td.custom-td-actions
+                form(action=`/servicio/update/${servicio.idservicios}` method="get" style="display:inline;")
+                  button(type="submit" class="btn-act btn-edit") Editar
+                form(action=`/servicio/delete/${servicio.idservicios}` method="post" style="display:inline;")
+                  button(type="submit" class="btn-act btn-delete") Eliminar
+
+      h2.mt-4 Turnos Programados
+      table.table.table-bordered.table-striped
+        thead
+          tr
+            th #ID
+            th Fecha
+            th Estado
+            th Servicio
+            th Acciones
+        tbody
+          each turno in turnos
+            tr
+              td #{turno.idturnos}
+              td #{turno.fechaFormateada}
+              td #{turno.estado}
+              td #{turno.Servicio.nombre}
+              td.custom-td-actions
+                form(action=`/turno/update/${turno.idturnos}` method="get" style="display:inline;")
+                  button(type="submit" class="btn-act btn-edit") Editar
+                form(action=`/turno/delete/${turno.idturnos}` method="post" style="display:inline;")
+                  button(type="submit" class="btn-act btn-delete") Eliminar
+
+      footer.mt-5.text-center
+        p © 2024 Proyecto Reservas
