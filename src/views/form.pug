@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+    h1 Registro/Login
+    form(action="", method="submit") 
+        label(for="name") Nombre *
+        input(id="name", type="text", name="Nombre") 
+        label(for="Apellidos") Apellidos 
+        textarea(id="Apellidos",name="Apellidos")  
+        label(for="email") Correo *
+        input(id="email",type="email", name="Correo") 
+        label(for="type") Tipo
+        button(type="submit") Sign 
+        button(type="submit") Login
