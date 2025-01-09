@@ -1,0 +1,368 @@
+/* Estilos generales */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: var(--color-1);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .fila {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .inferior {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .columna-izquierda,
+  .columna-centro,
+  .columna-derecha {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  
+  .columna-derecha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--color-fuente);
+    height: 100%;
+    width: 100%;
+  }
+  
+  .columna-centro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-fuente);
+    height: 100%;
+    gap: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  
+  .columna-centro button:hover {
+    background-color: var(--color-boton-hover);
+  }
+  
+  #myPieChart {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin: 0 0;
+  }
+  
+  .formulario-filtros {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+  }
+  
+  .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #campoFechas,
+  #campoMensual,
+  #campoAnual {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #campoFechas button {
+    width: 100%;
+    background-color: var(--color-boton);
+    color: var(--color-fuente);
+    font-weight: bold;
+  }
+  
+  #campoFechas button:hover {
+    width: 100%;
+    background-color: var(--color-boton-hover);
+  }
+  
+  #campoMensual input {
+    padding: 8px;
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+    color: var(--color-fuente);
+    gap: 20px;
+  }
+  
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  input[type="search"] {
+    color: var(--color-fuente);
+  }
+  
+  /* Botones */
+  .boton-filtrar,
+  .boton-nuevo {
+    padding: 10px 20px;
+    background-color: var(--color-boton);
+    color: var(--color-fuente);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+  }
+  
+  .boton-filtrar:hover,
+  .boton-nuevo:hover {
+    background-color: var(--color-boton-hover);
+  }
+  
+  .boton-nuevo {
+    margin-right: auto;
+  }
+  
+  /* Estilos de la tabla principal */
+  .tabla-registros {
+    max-width: 100%;
+    border-collapse: collapse;
+    /* margin-top: 10px; */
+    font-style: italic;
+    box-sizing: border-box;
+    justify-content: left;
+    align-items: center;
+  
+  }
+  
+  .tabla-registros th,
+  .tabla-registros td {
+    padding: 10px;
+    border: none;
+    text-align: left;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  
+  
+  .tabla-registros th {
+    background-color: var(--color-3);
+  }
+  
+  .tabla-registros td[colspan="4"] {
+    text-align: center;
+  }
+  
+  #tabla-registros_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #tabla-registros_paginate {
+    justify-self: left;
+  }
+  
+  td {
+    color: var(--color-fuente);
+  }
+  
+  .boton-editar {
+    background-color: transparent;
+    color: var(--color-fuente);
+    border: none;
+    cursor: pointer;
+  }
+  
+  #totalIncomes,
+  #totalExpenses {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--color-fuente);
+    width: 100%;
+    font-size: 1.25rem;
+    /* Tamaño similar a h4 */
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    cursor: pointer;
+    /* Espaciado vertical */
+  }
+  
+  #totalIncomes {
+    background-color: var(--color-boton-2);
+  }
+  
+  #totalExpenses {
+    background-color: var(--color-boton-3);
+  }
+  
+  #totalIncomes:hover {
+    background-color: var(--color-boton-2-hover);
+  }
+  
+  #totalExpenses:hover {
+    background-color: var(--color-boton-3-hover);
+  }
+  
+  /* Estilos para el modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+  }
+  
+  .modal-content {
+    background-color: #1E1E1E;
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 40%;
+    max-width: 500px;
+  }
+  
+  [id^="modal-close-"] {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  [id^="modal-close-"]:hover,
+  [id^="modal-close-"]:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal h2 {
+    color: var(--color-fuente);
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: normal;
+  }
+  
+  /*Estilos tabla modal*/
+  .tabla-detalleTipoIngresos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-style: italic;
+    border: none;
+    font-size: 15px;
+  }
+  
+  .tabla-detalleTipoIngresos td {
+    padding: 10px;
+    border-bottom: 2px solid var(--color-3);
+    text-align: left;
+  }
+  
+  .tabla-detalleTipoIngresos th {
+    background-color: none;
+    color: #000;
+  }
+  
+  .tabla-detalleTipoIngresos td[colspan="4"] {
+    text-align: center;
+  }
+  
+  .common-chart {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .tabla-detalleTipoGastos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-style: italic;
+    border: none;
+    font-size: 15px;
+  }
+  
+  .tabla-detalleTipoGastos td {
+    border-bottom: 2px solid var(--color-3);
+    padding: 10px;
+  
+    text-align: left;
+  
+  }
+  
+  .tabla-detalleTipoGastos th {
+    background-color: none;
+    color: #000;
+  }
+  
+  .tabla-detalleTipoGastos td[colspan="4"] {
+    text-align: center;
+  }
+  
+  
+  
+  .boton-editar {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  @media(orientation: portrait) {
+    .fila {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 20vh 30vh;
+    }
+  
+    .columna-derecha {
+      grid-column: 1/3;
+    }
+  
+    .tabla-registros {
+      table-layout: fixed;
+    }
+  
+    #totalIncomes,
+    #totalExpenses {
+      font-size: 100%;
+    }
+  
+    .modal-content {
+      width: 70%;
+      margin-top: 50px;
+    }
+  }
