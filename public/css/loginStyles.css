@@ -1,0 +1,159 @@
+/* Estilos generales */
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fondo oscuro */
+    color: #E0E0E0; /* Color de texto claro */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Estilo del título */
+.title {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.title img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Caja de inicio de sesión */
+.login-box {
+    background: #1E1E1E; /* Fondo más oscuro para la caja */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
+    text-align: center;
+    width: 90%;
+    max-width: 300px;
+}
+
+/* Títulos dentro de la caja de inicio de sesión */
+h2 {
+    font-size: 24px;
+    padding: 20px;
+    margin: 0;
+    color: #FFD700; /* Color dorado para el título */
+    border-bottom: 2px solid #FFD700; /* Línea dorada */
+    transition: transform 0.3s ease; /* Transición para el movimiento */
+}
+
+h2:hover {
+    transform: translateY(-5px); /* Movimiento hacia arriba al pasar el ratón */
+}
+
+/* Formulario de inicio de sesión */
+.login-form {
+    margin: 20px 0;
+}
+
+.login-form label {
+    display: block;
+    font-size: 14px;
+    margin: 10px 0 5px;
+    color: #B0BEC5; /* Color gris claro */
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Transición para el movimiento */
+}
+
+.login-form label:hover {
+    transform: translateY(-2px); /* Movimiento hacia arriba al pasar el ratón */
+}
+
+/* Estilos de los campos de entrada */
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #333; /* Borde oscuro */
+    border-radius: 5px;
+    font-size: 14px;
+    color: #E0E0E0; /* Texto claro */
+    background-color: #424242; /* Fondo oscuro para los campos */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones */
+}
+
+.login-form input[type="email"]:hover,
+.login-form input[type="password"]:hover,
+.login-form input[type="text"]:hover {
+    background-color: #555; /* Fondo más claro al pasar el ratón */
+    transform: translateY(-1px); /* Movimiento hacia arriba al pasar el ratón */
+}
+
+/* Opciones de inicio de sesión */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #B0BEC5; /* Color gris claro */
+}
+
+.login-options label {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease; /* Transición para el movimiento */
+}
+
+.login-options label:hover {
+    transform: translateY(-2px); /* Movimiento hacia arriba al pasar el ratón */
+}
+
+.login-options a {
+    color: #FFD700; /* Enlaces dorados */
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s; /* Transiciones */
+}
+
+.login-options a:hover {
+    text-decoration: underline;
+    color: #FFC107; /* Color dorado más claro al pasar el ratón */
+    transform: translateY(-2px); /* Movimiento hacia arriba al pasar el ratón */
+}
+
+/* Botones */
+.login-button,
+.azure-button {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones */
+}
+
+.login-button {
+    background-color: #FFD700; /* Fondo dorado */
+    color: #121212; /* Texto oscuro */
+}
+
+.login-button:hover {
+    background-color: #FFC107; /* Color dorado más claro al pasar el ratón */
+    transform: translateY(-2px); /* Movimiento hacia arriba al pasar el ratón */
+}
+
+.azure-button {
+    margin-top: 10px;
+    background-color: #007ACC; /* Azul oscuro */
+    color: #fff;
+}
+
+.azure-button:hover {
+    background-color: #005A9E; /* Azul más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Movimiento hacia arriba al pasar el ratón */
+}
