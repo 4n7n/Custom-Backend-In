@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+  .list-container
+    h2 Lista de Elementos
+    table.list-table
+      thead
+        tr
+          th(onclick="sortTable(0)") ID
+          th(onclick="sortTable(1)") Nombre
+          th(onclick="sortTable(2)") Descripción
+          th(onclick="sortTable(3)") Fecha
+          th(onclick="sortTable(4)") Estado
+          th Acción
+      tbody
+        tr(data-status="active" data-date="2021-01-15")
+          td #1001
+          td Elemento 1
+          td Descripción del elemento 1
+          td 2021-01-15
+          td.status-active Activo
+          td
+            .action-btn(onclick="toggleDropdown(this)") ...
+              .dropdown
+                a(href="#") Editar
+                a(href="#") Eliminar
+        tr(data-status="inactive" data-date="2021-02-10")
+          td #1002
+          td Elemento 2
+          td Descripción del elemento 2
+          td 2021-02-10
+          td.status-inactive Inactivo
+          td
+            .action-btn(onclick="toggleDropdown(this)") ...
+              .dropdown
+                a(href="#") Editar
+                a(href="#") Eliminar
