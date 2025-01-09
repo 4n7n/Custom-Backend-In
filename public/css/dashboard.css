@@ -1,0 +1,217 @@
+/* Estilos generales */
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    /* Fondo oscuro */
+    color: #E0E0E0;
+    /* Color de texto claro */
+    font-family: Arial, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Contenedor principal */
+.container {
+    padding: 20px;
+}
+
+/* Títulos */
+h1,
+h2 {
+    color: #FFD700;
+    /* Color dorado para los títulos */
+    text-align: center;
+}
+
+/* Contenedor de los botones */
+.button-container {
+    display: flex;
+    justify-content: center;
+    /* Centrar horizontalmente */
+    gap: 20px;
+    /* Espacio entre los botones */
+    margin-bottom: 20px;
+    /* Espacio inferior */
+    align-items: center;
+    /* Alineación vertical */
+}
+
+/* Estilos base para los botones */
+.btn {
+    padding: 20px 30px;
+    /* Espaciado interno */
+    border: none;
+    /* Sin borde */
+    border-radius: 12px;
+    /* Bordes redondeados */
+    font-size: 18px;
+    /* Tamaño de fuente */
+    font-weight: 600;
+    /* Texto más destacado */
+    cursor: pointer;
+    /* Cambiar cursor al pasar el ratón */
+    width: 45rem;
+    /* Ancho ajustado */
+    height: 10rem;
+    /* Altura ajustada */
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    /* Animación suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Centrado interno */
+    text-transform: uppercase;
+    /* Texto en mayúsculas */
+    letter-spacing: 1px;
+    /* Espaciado entre letras */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+/* Botón primario (azul) */
+.btn-primary {
+    background-color: #0056d2;
+    /* Azul corporativo */
+    color: white;
+    /* Texto blanco */
+    border: 1px solid #0044a3;
+    /* Borde tenue */
+}
+
+/* Botón secundario (gris) */
+.btn-secondary {
+    background-color: #6c757d;
+    /* Gris elegante */
+    color: white;
+    /* Texto blanco */
+    border: 1px solid #545b62;
+    /* Borde tenue */
+}
+
+/* Efecto hover (primario) */
+.btn-primary:hover {
+    background-color: #003e9c;
+    /* Azul más oscuro */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Sombra más prominente */
+    transform: translateY(-3px);
+    /* Levanta un poco el botón */
+}
+
+/* Efecto hover (secundario) */
+.btn-secondary:hover {
+    background-color: #495057;
+    /* Gris más oscuro */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Sombra más prominente */
+    transform: translateY(-3px);
+    /* Levanta un poco el botón */
+}
+
+/* Efecto activo (clic) */
+button:active {
+    transform: translateY(1px);
+    /* Simula un clic */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    /* Reduce la sombra */
+}
+
+/* Estilos de las tablas */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    /* Colapsar bordes */
+}
+
+th,
+td {
+    padding: 12px;
+    /* Espaciado interno */
+    border: 1px solid #333;
+    /* Borde oscuro */
+    text-align: left;
+    /* Alinear texto a la izquierda */
+}
+
+th {
+    background-color: #1E1E1E;
+    /* Fondo oscuro para encabezados */
+    color: #FFD700;
+    /* Color dorado para texto de encabezados */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #2A2A2A;
+    /* Fondo alternativo para filas */
+}
+
+tbody tr:hover {
+    background-color: #333;
+    /* Fondo más claro al pasar el ratón */
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #B0BEC5;
+    /* Color gris claro para el pie de página */
+}
+
+
+.card {
+    display: flex;
+    justify-self: center;
+
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Sombra más prominente */
+}
+
+button {
+    border-radius: 8px;
+    /* Esquinas redondeadas para los botones */
+}
+
+/* Estilo general para los botones */
+.btn-act {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Botón de Editar (amarillo) */
+.btn-edit {
+    background-color: #ffc107;
+    /* Amarillo */
+    color: #000;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+/* Botón de Eliminar (rojo) */
+.btn-delete {
+    background-color: #dc3545;
+    /* Rojo */
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+.custom-td-actions{
+    display: flex;
+    gap: 1rem;
+    place-content: center;
+}
