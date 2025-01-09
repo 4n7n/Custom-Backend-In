@@ -1,8 +1,31 @@
 doctype html 
 html(lang="es") 
     head
-        meta(charset="UTF-8") 
-        meta(name="viewport", content="width=device-width, initial-scale=1.0") 
-        title Hola mundo
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Proyecto
+        link(rel="stylesheet", href="/css/layout.css")
+        block styles
+
     body
-        block content
+        header.navbar
+            .navbar-container
+                .navbar-left
+                    h1.logo 
+                      Proyecto Reservas
+                .navbar-center
+                .navbar-right
+                    nav
+                        p#username-icon #{(user.username.slice(0,1)).toUpperCase()}
+                        ul.nav-links
+                            li
+                                a(href="/logout") Cerrar sesión
+
+        main
+            block content
+
+               // Añadir el script para el evento de clic
+        script.
+            document.getElementById("username-icon").addEventListener("click", function() {
+                window.location.href = "/user";
+            });
