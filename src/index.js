@@ -45,3 +45,40 @@ app.use(
         },
     })
 );
+
+// Middleware para guardar información del usuario en la sesión
+app.use(saveUser);
+
+// Usar rutas
+app.use("/", router);
+
+// Inicializa los modelos
+const models = {
+    User: User.init(sequelize),
+    Turnos: Turnos.init(sequelize),
+    Servicios: Servicios.init(sequelize),
+};
+
+
+// Define las relaciones
+models.Turnos.belongsTo(models.Servicios, { foreignKey: "servicios_idservicios" });
+models.Servicios.hasMany(models.Turnos, { foreignKey: "servicios_idservicios" });
+
+
+// Configura las asociaciones si están definidas
+Object.values(models).forEach((model) => {
+    if (typeof model.associate === "function") {
+        model.associate(models);
+    }
+});
+
+// Sincronizar modelos
+sequelize.sync({ force: false }).then(() => {
+    console.log("Database synchronized");
+});
+
+// Iniciar servidor
+const PORT = process.env.PORT || 3000; // Puerto por defecto si no está configurado
+app.listen(PORT, () => {
+    console.log(`Servidor escuchando en http://localhost:${PORT}`);
+});
