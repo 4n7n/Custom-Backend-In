@@ -1,0 +1,25 @@
+block content
+  h1 Turnos del Usuario
+
+  // Verifica si hay turnos
+  if turnos.length > 0
+    table
+      thead
+        tr
+          th Fecha
+          th Estado
+          th Servicio
+          th Acciones
+      tbody
+        each turno in turnos
+          tr
+            td= turno.fecha
+            td= turno.estado
+            td= turno.servicio
+            td
+              // Enlace para ver detalles del turno
+              a(href=`/turno/${turno.id}`) Ver detalles
+              // Enlace para cancelar el turno
+              a(href=`/turno/cancelar/${turno.id}`) Cancelar
+  else
+    p No hay turnos disponibles para este usuario.
