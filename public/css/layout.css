@@ -1,0 +1,194 @@
+:root {
+    --color-1: rgb(30, 30, 30); /* Fondo oscuro */
+    --color-2: rgb(50, 50, 50); /* Color de fondo más claro */
+    --color-3: rgb(80, 80, 80); /* Color gris para bordes */
+    --color-4: rgb(150, 150, 150); /* Color gris claro */
+    --color-5: rgb(200, 200, 200); /* Color para textos secundarios */
+    --color-fuente: rgb(230, 230, 230); /* Texto principal claro */
+    --color-fuente-2: rgb(240, 240, 240); /* Texto secundario */
+    --color-boton: #2e9de3; /* Azul */
+    --color-boton-hover: rgb(73, 167, 225); /* Azul más brillante */
+    --color-boton-2: #2ea01d; /* Verde */
+    --color-boton-2-hover: rgb(64, 174, 47); /* Verde más brillante */
+    --color-boton-3: #ff0000; /* Rojo */
+    --color-boton-3-hover: rgb(254, 60, 60); /* Rojo más brillante */
+  }
+  
+  body,
+  html {
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    color: var(--color-fuente);
+    background-color: var(--color-1);
+    padding: 0;
+    margin: 0;
+  }
+  
+  main {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Botones */
+  button {
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6); /* Sombra más intensa */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+  }
+  
+  button:hover {
+    transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
+  }
+  
+  /* Navbar */
+  header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-2); /* Fondo de navbar más claro */
+    color: var(--color-fuente);
+    border-bottom: 2px solid var(--color-boton);
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .navbar-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-left a {
+    text-decoration: none;
+    color: var(--color-fuente);
+  }
+  
+  .navbar-left .logo {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-center {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar-right {
+    width: 100%;
+  }
+  
+  nav a {
+    height: 80%;
+  }
+  
+  nav button {
+    background-color: var(--color-boton);
+    color: var(--color-fuente);
+    font-size: 1.1rem;
+  }
+  
+  nav button.expense {
+    background-color: var(--color-boton-3);
+  }
+  
+  nav button.expense:hover {
+    background-color: var(--color-boton-3-hover);
+  }
+  
+  nav button.income {
+    background-color: var(--color-boton-2);
+  }
+  
+  nav button.income:hover {
+    background-color: var(--color-boton-2-hover);
+  }
+  
+  #logo {
+    width: 35px;
+    height: auto;
+    margin-right: 8px;
+  }
+  
+  #username-icon {
+    background-color: var(--color-boton);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-fuente);
+    font-size: 150%;
+  }
+  
+  .navbar-right nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  nav p {
+    margin: 2px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    color: var(--color-fuente);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--color-4); /* Color gris claro al pasar el ratón */
+  }
+  
+  /* Media Queries */
+  @media (orientation: portrait) {
+    .navbar-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+    }
+  
+    .navbar-left {
+      justify-content: center;
+    }
+  
+    .navbar-center {
+      grid-row: 3;
+    }
+  
+    .navbar-right nav {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  
