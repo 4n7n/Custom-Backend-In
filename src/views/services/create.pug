@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  head
+    title Crear Servicio
+    link(rel="stylesheet" href="/css/services.css")
+  h1.text-center Crear Servicio
+  .form-container
+    form(action="/servicio/create" method="post")
+      .form-group
+        label(for="nombre") Nombre del Servicio
+        input(type="text" name="nombre" id="nombre" required)
+      .form-group
+        label(for="descripcion") Descripción
+        textarea(name="descripcion" id="descripcion" required)
+      .form-group
+        label(for="precio") Precio
+        input(type="number" name="precio" id="precio" step="0.01" required)
+      .form-group
+        label(for="duracion") Duración (en minutos)
+        input(type="number" name="duracion" id="duracion" required)
+      button(type="submit") Crear Servicio
