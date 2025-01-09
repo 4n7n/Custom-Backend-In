@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+  head
+    title #{title}
+    link(rel="stylesheet" href="/css/appointment.css")
+  h1.text-center= title
+  .form-container
+    form(action=`/turno/update/${turno.idturnos}` method="post")
+      .form-group
+        label(for="fecha") Fecha y Hora
+        input(
+          type="datetime-local" 
+          name="fecha" 
+          value=turno.fecha ? new Date(turno.fecha).toISOString().slice(0, 16) : '' 
+          min="#{new Date().toISOString().slice(0, 16)}" 
+          required
+        )
+      .form-group
+        label(for="estado") Estado
+        select(name="estado" required)
+          option(value="Activo" selected=turno.estado == 'activo') Activo
+          option(value="Inactivo" selected=turno.estado == 'inactivo') Inactivo
+      .form-group
+        label(for="user_id") Usuario
+        select(name="user_id" id="user_id" disabled)
+          each user in usuarios
+            option(value=user.id, selected=user.id == turno.user_id) #{user.username}
+      .form-group
+        label(for="servicio_id") Servicio
+        select(name="servicio_id" id="servicio_id" disabled)
+          each servicio in servicios
+            option(value=servicio.idservicios, selected=servicio.idservicios == turno.servicios_idservicios) #{servicio.nombre}
+      button(type="submit") Guardar Cambios
