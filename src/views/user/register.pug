@@ -1,0 +1,33 @@
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Register
+        link(rel="stylesheet" href="/css/layout.css")
+        link(rel="stylesheet" href="/css/loginStyles.css")
+
+    body
+        main
+            div.title
+                h1 Register
+            div.login-box
+                h2 Registro
+                form.login-form(action="/register" method="POST")
+        
+                    label(for="username") Nombre de usuario 
+                    input#username(type="text" name="username" placeholder='usuarioejemplo' required)
+                    
+                    label(for="email") Correo Electrónico
+                    input#email(type="email" name="email" placeholder='usuarioejemplo@correo.com' required)
+
+                    label(for="password") Contraseña
+                    input#password(type="password" name="password"  placeholder='Contraseña' minlength ="5" required)
+                    
+                    label(for="passwordConfirm") Repetir contraseña
+                    input#repit-password(type="password" name="passwordConfirm" placeholder='Contraseña' minlength ="5" required)
+                    if(message && messageType)
+                        p(style=`color: red` class=`message ${messageType}`)= message  
+                    button.login-button(type="submit") Enviar  
+                    
+                    a(href='/login')    
+                        button.azure-button(type="button") Iniciar Sesion
