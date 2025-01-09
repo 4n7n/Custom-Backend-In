@@ -1,0 +1,14 @@
+backend:
+    build: .
+    container_name: ${APP_HOST}
+    restart: unless-stopped
+    ports:
+    - ${APP_PORT}:3000
+    depends_on:
+    - db
+    - mongo
+    volumes:
+    - .:/app
+    - /app/node_modules
+
+volumes:
