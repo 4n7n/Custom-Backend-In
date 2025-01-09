@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+  head
+    title Actualizar Servicio
+    link(rel="stylesheet" href="/css/services.css")
+  h1.text-center Actualizar Servicio
+  .form-container
+    form(action=`/servicio/update/${servicio.idservicios}` method="post")
+      .form-group
+        label(for="nombre") Nombre del Servicio
+        input(
+          type="text" 
+          name="nombre" 
+          value=servicio.nombre 
+          required
+        )
+      .form-group
+        label(for="descripcion") Descripción
+        textarea(name="descripcion" required)= servicio.descripcion
+      .form-group
+        label(for="precio") Precio
+        input(
+          type="number" 
+          name="precio" 
+          value=servicio.precio 
+          step="0.01" 
+          required
+        )
+      .form-group
+        label(for="duracion") Duración (en minutos)
+        input(
+          type="number" 
+          name="duracion" 
+          value=servicio.duracion 
+          required
+        )
+      button(type="submit") Guardar Cambios
