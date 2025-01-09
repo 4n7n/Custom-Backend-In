@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  head
+    title #{title}
+    link(rel="stylesheet" href="/css/appointment.css")
+  h1.text-center= title
+  .form-container
+    form(action="/turno/create" method="post")
+      .form-group
+        label(for="fecha") Fecha y Hora
+        input(type="datetime-local" name="fecha" id="fecha" required min="#{new Date().toISOString().slice(0, 16)}")
+      .form-group
+        label(for="user_id") Usuario
+        select(name="user_id" id="user_id" required)
+          each usuario  in usuarios
+            option(value=usuario.id) #{usuario.username}
+      .form-group
+        label(for="servicios_idservicios") Servicio
+        select(name="servicios_idservicios" id="servicios_idservicios" required)
+          each servicio in servicios
+            option(value=servicio.idservicios) #{servicio.nombre}
+      button(type="submit") Crear Turno
