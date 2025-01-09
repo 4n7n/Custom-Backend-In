@@ -1,14 +1,14 @@
-backend:
-    build: .
-    container_name: ${APP_HOST}
-    restart: unless-stopped
+version: '3.8'
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mysql_turnos_1
+    restart: always
     ports:
-    - ${APP_PORT}:3000
-    depends_on:
-    - db
-    - mongo
+      - "3306:3306"
     volumes:
-    - .:/app
-    - /app/node_modules
-
+      - db_data:/var/lib/mysql
 volumes:
+  db_data:
