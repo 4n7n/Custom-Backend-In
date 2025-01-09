@@ -1,0 +1,35 @@
+extends ../layout
+
+block styles 
+  link(rel="stylesheet", href="/css/adminPanel.css")
+  script(src="../js/sortTable.js")
+  script(src="../js/toggleDropdown.js")
+
+block content
+  .header
+    h1 Menu Administrador
+  table.order-history
+    thead
+      tr
+        th(onclick="sortTable(0)") Id
+        th(onclick="sortTable(1)") Username
+        th(onclick="sortTable(2)") Email
+        th(onclick="sortTable(3)") Rol
+        th(onclick="sortTable(4)") Active
+        th(onclick="sortTable(5)") Actions
+      tbody
+        each user in users
+          tr()
+            td #{user.id}
+            td #{user.username}
+            td #{user.email}
+            td #{user.rol}
+            td #{user.active}
+            td
+              .action-btn(onclick="toggleDropdown(this)") ...
+                .dropdown
+                  if user.active 
+                    a(href=`/user/${user.id}/deactivate`) Desactivar
+                  else
+                    a(href=`/user/${user.id}/activate`) Activar
+                  
