@@ -46,6 +46,25 @@ class USER_NOT_ACTIVE extends Error {
     }
 }
 
+class EXPENSE_NOT_FOUND extends Error {
+    constructor() {
+        super("Gasto no encontrado");
+        this.status = 404;
+    }
+}
+
+class INCOME_NOT_FOUND extends Error {
+    constructor() {
+        super("Ingreso no encontrado");
+        this.status = 404;
+    }
+}
+class CATEGORY_NOT_FOUND extends Error {
+    constructor() {
+        super("Categoría no encontrada");
+        this.status = 404;
+    }
+}
 export const errors = {
     USER_NOT_FOUND,
     PASSWORD_NOT_MATCH,
