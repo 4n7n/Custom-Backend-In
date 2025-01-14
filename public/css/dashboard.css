@@ -54,9 +54,9 @@ h2 {
     /* Texto más destacado */
     cursor: pointer;
     /* Cambiar cursor al pasar el ratón */
-    width: 45rem;
+    width: revert;
     /* Ancho ajustado */
-    height: 10rem;
+    height: 05rem;
     /* Altura ajustada */
     transition: transform 0.2s ease, box-shadow 0.3s ease;
     /* Animación suave */
@@ -132,7 +132,7 @@ th,
 td {
     padding: 12px;
     /* Espaciado interno */
-    border: 1px solid #333;
+    border: 5px solid #333;
     /* Borde oscuro */
     text-align: left;
     /* Alinear texto a la izquierda */
